@@ -1,0 +1,11 @@
+mongodb:
+  hostname: mongodb
+  image: mongo:3.2.8
+  volumes:
+    - /Users/Ananas/Documents/SitesPHP/MongoCourse/storage:/data/db
+    - /Users/Ananas/Documents/SitesPHP/MongoCourse:/home/anael
+  ports:
+    - "27017:27017"
+  command: --smallfiles
+  environment:
+    DNSDOCK_ALIAS: mongodb.docker,mongo.docker
