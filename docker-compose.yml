@@ -9,3 +9,4 @@ mongodb:
   command: --smallfiles
   environment:
     DNSDOCK_ALIAS: mongodb.docker,mongo.docker
+  tty: true
