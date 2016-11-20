@@ -1,12 +1,42 @@
-mongodb:
-  hostname: mongodb
-  image: mongo:3.2.8
-  volumes:
-    - /Users/Ananas/Documents/SitesPHP/MongoCourse/storage:/data/db
-    - /Users/Ananas/Documents/SitesPHP/MongoCourse:/home/anael
-  ports:
-    - "27017:27017"
-  command: --smallfiles
-  environment:
-    DNSDOCK_ALIAS: mongodb.docker,mongo.docker
-  tty: true
+version: '2'
+
+services:
+  mongodb_primary:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs1:/home/anael/log
+      ports:
+        - "27017:27017"
+      depends_on:
+        - "mongodb_secondary_2"
+      command: mongod --replSet my-mongo-set --logpath "/home/anael/log/logRset.log"
+
+  mongodb_secondary_1:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs2:/home/anael/log
+      ports:
+        - "27018:27017"
+      depends_on:
+        - "mongodb_primary"
+      command: mongod --replSet my-mongo-set --logpath "/home/anael/log/logRset.log"
+
+  mongodb_secondary_2:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs3:/home/anael/log
+      ports:
+        - "27019:27017"
+      command: mongod --replSet my-mongo-set  --logpath "/home/anael/log/logRset.log"
+
+  mongosetuper:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/scripts:/scripts
+      depends_on:
+        - "mongodb_secondary_1"
+      entrypoint: [ "/scripts/setupReplicatSet.sh" ]

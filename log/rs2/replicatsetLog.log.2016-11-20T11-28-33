@@ -1,0 +1,38 @@
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=mongodb
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] modules: none
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] build environment:
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten]     distmod: debian71
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-20T11:22:50.722+0000 I CONTROL  [initandlisten] options: { replication: { replSet: "replMongoCourse" }, systemLog: { destination: "file", path: "/home/anael/log/replicatsetLog.log" } }
+2016-11-20T11:22:50.726+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-20T11:22:51.224+0000 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument: Did not find replica set lastVote document in local.replset.election
+2016-11-20T11:22:51.224+0000 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument: Did not find replica set configuration document in local.system.replset
+2016-11-20T11:22:51.225+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2016-11-20T11:22:51.225+0000 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-11-20T11:22:51.336+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-11-20T11:23:59.029+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58030 #1 (1 connection now open)
+2016-11-20T11:23:59.039+0000 I REPL     [conn1] replSetInitiate admin command received from client
+2016-11-20T11:23:59.052+0000 I NETWORK  [conn1] getaddrinfo("mongodb1") failed: Name or service not known
+2016-11-20T11:23:59.059+0000 I NETWORK  [conn1] getaddrinfo("mongodb2") failed: Name or service not known
+2016-11-20T11:23:59.067+0000 I NETWORK  [conn1] getaddrinfo("mongodb3") failed: Name or service not known
+2016-11-20T11:23:59.067+0000 E REPL     [conn1] replSet initiate got NodeNotFound: No host described in new configuration 1 for replica set replMongoCourse maps to this node while validating { _id: "replMongoCourse", members: [ { _id: 0.0, host: "mongodb1:21017", priority: 0.0, slaveDelay: 5.0 }, { _id: 1.0, host: "mongodb2:21017" }, { _id: 2.0, host: "mongodb3:21017" } ], version: 1 }
+2016-11-20T11:23:59.075+0000 I NETWORK  [conn1] end connection 127.0.0.1:58030 (0 connections now open)
+2016-11-20T11:25:51.534+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58032 #2 (1 connection now open)
+2016-11-20T11:25:53.559+0000 I NETWORK  [conn2] end connection 127.0.0.1:58032 (0 connections now open)
+2016-11-20T11:26:19.808+0000 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2016-11-20T11:26:19.809+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2016-11-20T11:26:19.811+0000 I CONTROL  [signalProcessingThread] now exiting
+2016-11-20T11:26:19.811+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2016-11-20T11:26:19.811+0000 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2016-11-20T11:26:19.811+0000 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2016-11-20T11:26:19.811+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2016-11-20T11:26:19.811+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2016-11-20T11:26:19.811+0000 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2016-11-20T11:26:19.811+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2016-11-20T11:26:20.086+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2016-11-20T11:26:20.086+0000 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

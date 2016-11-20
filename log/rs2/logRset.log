@@ -1,0 +1,80 @@
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=mongodb
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] modules: none
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] build environment:
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten]     distmod: debian71
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-20T14:51:03.235+0000 I CONTROL  [initandlisten] options: { replication: { replSet: "my-mongo-set" }, systemLog: { destination: "file", path: "/home/anael/log/logRset.log" } }
+2016-11-20T14:51:03.239+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-20T14:51:03.619+0000 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument: Did not find replica set lastVote document in local.replset.election
+2016-11-20T14:51:03.619+0000 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument: Did not find replica set configuration document in local.system.replset
+2016-11-20T14:51:03.620+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2016-11-20T14:51:03.620+0000 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-11-20T14:51:03.711+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-11-20T14:51:04.134+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.5:44440 #1 (1 connection now open)
+2016-11-20T14:51:04.139+0000 I REPL     [conn1] replSetInitiate admin command received from client
+2016-11-20T14:51:04.145+0000 I REPL     [conn1] replSetInitiate config object with 3 members parses ok
+2016-11-20T14:51:04.148+0000 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to mongodb_primary:27017
+2016-11-20T14:51:04.151+0000 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to mongodb_secondary_2:27017
+2016-11-20T14:51:04.152+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.3:33192 #2 (2 connections now open)
+2016-11-20T14:51:04.152+0000 I REPL     [conn1] ******
+2016-11-20T14:51:04.152+0000 I REPL     [conn1] creating replication oplog of size: 990MB...
+2016-11-20T14:51:04.155+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:39382 #3 (3 connections now open)
+2016-11-20T14:51:04.175+0000 I STORAGE  [conn1] Starting WiredTigerRecordStoreThread local.oplog.rs
+2016-11-20T14:51:04.175+0000 I STORAGE  [conn1] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2016-11-20T14:51:04.175+0000 I STORAGE  [conn1] Scanning the oplog to determine where to place markers for truncation
+2016-11-20T14:51:04.387+0000 I REPL     [conn1] ******
+2016-11-20T14:51:04.447+0000 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "my-mongo-set", version: 1, protocolVersion: 1, members: [ { _id: 0, host: "mongodb_primary:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 0.0, tags: {}, slaveDelay: 5, votes: 1 }, { _id: 1, host: "mongodb_secondary_1:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "mongodb_secondary_2:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5831b858cbbc77d84c755b08') } }
+2016-11-20T14:51:04.447+0000 I REPL     [ReplicationExecutor] This node is mongodb_secondary_1:27017 in the config
+2016-11-20T14:51:04.447+0000 I REPL     [ReplicationExecutor] transition to STARTUP2
+2016-11-20T14:51:04.448+0000 I REPL     [conn1] Starting replication applier threads
+2016-11-20T14:51:04.448+0000 I COMMAND  [conn1] command local.oplog.rs command: replSetInitiate { replSetInitiate: { _id: "my-mongo-set", members: [ { _id: 0.0, host: "mongodb_primary:27017", priority: 0.0, slaveDelay: 5.0 }, { _id: 1.0, host: "mongodb_secondary_1:27017" }, { _id: 2.0, host: "mongodb_secondary_2:27017" } ] } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:22 locks:{ Global: { acquireCount: { r: 5, w: 3, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 221 } }, Database: { acquireCount: { w: 2, W: 1 } }, Metadata: { acquireCount: { w: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_command 309ms
+2016-11-20T14:51:04.448+0000 I REPL     [ReplicationExecutor] transition to RECOVERING
+2016-11-20T14:51:04.448+0000 I REPL     [ReplicationExecutor] Member mongodb_primary:27017 is now in state STARTUP
+2016-11-20T14:51:04.449+0000 I REPL     [ReplicationExecutor] Member mongodb_secondary_2:27017 is now in state STARTUP
+2016-11-20T14:51:04.452+0000 I REPL     [ReplicationExecutor] transition to SECONDARY
+2016-11-20T14:51:04.454+0000 I NETWORK  [conn1] end connection 172.20.0.5:44440 (2 connections now open)
+2016-11-20T14:51:06.163+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.3:33196 #4 (3 connections now open)
+2016-11-20T14:51:06.164+0000 I NETWORK  [conn4] end connection 172.20.0.3:33196 (2 connections now open)
+2016-11-20T14:51:06.168+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:39390 #5 (3 connections now open)
+2016-11-20T14:51:06.168+0000 I NETWORK  [conn5] end connection 172.20.0.2:39390 (2 connections now open)
+2016-11-20T14:51:07.647+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.3:33208 #6 (3 connections now open)
+2016-11-20T14:51:07.685+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:39398 #7 (4 connections now open)
+2016-11-20T14:51:07.687+0000 I NETWORK  [conn6] end connection 172.20.0.3:33208 (3 connections now open)
+2016-11-20T14:51:07.710+0000 I NETWORK  [conn7] end connection 172.20.0.2:39398 (2 connections now open)
+2016-11-20T14:51:08.149+0000 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58680 #8 (3 connections now open)
+2016-11-20T14:51:09.451+0000 I REPL     [ReplicationExecutor] Member mongodb_secondary_2:27017 is now in state SECONDARY
+2016-11-20T14:51:09.451+0000 I REPL     [ReplicationExecutor] Member mongodb_primary:27017 is now in state SECONDARY
+2016-11-20T14:51:14.673+0000 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-11-20T14:51:14.673+0000 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-11-20T14:51:14.733+0000 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-11-20T14:51:14.815+0000 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 1
+2016-11-20T14:51:14.815+0000 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-11-20T14:51:14.818+0000 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to mongodb_secondary_2:27017
+2016-11-20T14:51:14.820+0000 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to mongodb_secondary_2:27017
+2016-11-20T14:51:15.459+0000 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-11-20T14:51:18.299+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:39408 #9 (4 connections now open)
+2016-11-20T14:51:18.300+0000 I NETWORK  [conn9] end connection 172.20.0.2:39408 (3 connections now open)
+2016-11-20T14:51:18.303+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:39410 #10 (4 connections now open)
+2016-11-20T14:51:18.305+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:39412 #11 (5 connections now open)
+2016-11-20T14:52:02.318+0000 I NETWORK  [conn8] end connection 127.0.0.1:58680 (4 connections now open)
+2016-11-20T14:52:17.968+0000 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2016-11-20T14:52:17.968+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2016-11-20T14:52:17.970+0000 I REPL     [signalProcessingThread] Stopping replication applier threads
+2016-11-20T14:52:18.337+0000 I STORAGE  [conn3] got request after shutdown()
+2016-11-20T14:52:18.351+0000 I STORAGE  [conn2] got request after shutdown()
+2016-11-20T14:52:19.520+0000 I CONTROL  [signalProcessingThread] now exiting
+2016-11-20T14:52:19.520+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2016-11-20T14:52:19.520+0000 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2016-11-20T14:52:19.521+0000 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2016-11-20T14:52:19.521+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2016-11-20T14:52:19.521+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2016-11-20T14:52:19.521+0000 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2016-11-20T14:52:19.521+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2016-11-20T14:52:19.521+0000 I NETWORK  [conn10] end connection 172.20.0.2:39410 (0 connections now open)
+2016-11-20T14:52:19.712+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2016-11-20T14:52:19.712+0000 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
