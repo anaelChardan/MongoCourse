@@ -10,7 +10,7 @@ services:
         - "27017:27017"
       depends_on:
         - "mongodb_secondary_2"
-      command: mongod --replSet my-mongo-set --logpath "/home/anael/log/logRset.log"
+      command: --replSet my-mongo-set
 
   mongodb_secondary_1:
       hostname: mongodb
@@ -21,7 +21,7 @@ services:
         - "27018:27017"
       depends_on:
         - "mongodb_primary"
-      command: mongod --replSet my-mongo-set --logpath "/home/anael/log/logRset.log"
+      command: --replSet my-mongo-set
 
   mongodb_secondary_2:
       hostname: mongodb
@@ -30,13 +30,16 @@ services:
         - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs3:/home/anael/log
       ports:
         - "27019:27017"
-      command: mongod --replSet my-mongo-set  --logpath "/home/anael/log/logRset.log"
+      command: --replSet my-mongo-set
 
   mongosetuper:
       hostname: mongodb
       image: mongo:3.2.8
+      ports:
+        - "27020:27017"
       volumes:
         - /mnt/Documents/Workspace/Perso/MongoCourse/scripts:/scripts
       depends_on:
         - "mongodb_secondary_1"
       entrypoint: [ "/scripts/setupReplicatSet.sh" ]
+      tty: true

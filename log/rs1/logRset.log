@@ -1,80 +1,35 @@
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=mongodb
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] db version v3.2.8
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] modules: none
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] build environment:
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten]     distmod: debian71
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten]     distarch: x86_64
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten]     target_arch: x86_64
-2016-11-20T14:51:02.318+0000 I CONTROL  [initandlisten] options: { replication: { replSet: "my-mongo-set" }, systemLog: { destination: "file", path: "/home/anael/log/logRset.log" } }
-2016-11-20T14:51:02.321+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
-2016-11-20T14:51:02.687+0000 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument: Did not find replica set lastVote document in local.replset.election
-2016-11-20T14:51:02.687+0000 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument: Did not find replica set configuration document in local.system.replset
-2016-11-20T14:51:02.688+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
-2016-11-20T14:51:02.688+0000 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
-2016-11-20T14:51:02.762+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-2016-11-20T14:51:04.142+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.4:34362 #1 (1 connection now open)
-2016-11-20T14:51:04.142+0000 I NETWORK  [conn1] end connection 172.20.0.4:34362 (0 connections now open)
-2016-11-20T14:51:04.148+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.4:34366 #2 (1 connection now open)
-2016-11-20T14:51:04.152+0000 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to mongodb_secondary_1:27017
-2016-11-20T14:51:06.164+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:36088 #3 (2 connections now open)
-2016-11-20T14:51:06.165+0000 I NETWORK  [conn3] end connection 172.20.0.2:36088 (1 connection now open)
-2016-11-20T14:51:06.289+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:36094 #4 (2 connections now open)
-2016-11-20T14:51:06.294+0000 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to mongodb_secondary_2:27017
-2016-11-20T14:51:06.301+0000 I REPL     [replExecDBWorker-2] Starting replication applier threads
-2016-11-20T14:51:06.302+0000 W REPL     [rsSync] did not receive a valid config yet
-2016-11-20T14:51:06.302+0000 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "my-mongo-set", version: 1, protocolVersion: 1, members: [ { _id: 0, host: "mongodb_primary:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 0.0, tags: {}, slaveDelay: 5, votes: 1 }, { _id: 1, host: "mongodb_secondary_1:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "mongodb_secondary_2:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5831b858cbbc77d84c755b08') } }
-2016-11-20T14:51:06.302+0000 I REPL     [ReplicationExecutor] This node is mongodb_primary:27017 in the config
-2016-11-20T14:51:06.302+0000 I REPL     [ReplicationExecutor] transition to STARTUP2
-2016-11-20T14:51:06.303+0000 I REPL     [ReplicationExecutor] Member mongodb_secondary_1:27017 is now in state SECONDARY
-2016-11-20T14:51:06.303+0000 I REPL     [ReplicationExecutor] Member mongodb_secondary_2:27017 is now in state STARTUP2
-2016-11-20T14:51:07.303+0000 I REPL     [rsSync] ******
-2016-11-20T14:51:07.304+0000 I REPL     [rsSync] creating replication oplog of size: 990MB...
-2016-11-20T14:51:07.350+0000 I STORAGE  [rsSync] Starting WiredTigerRecordStoreThread local.oplog.rs
-2016-11-20T14:51:07.350+0000 I STORAGE  [rsSync] The size storer reports that the oplog contains 0 records totaling to 0 bytes
-2016-11-20T14:51:07.350+0000 I STORAGE  [rsSync] Scanning the oplog to determine where to place markers for truncation
-2016-11-20T14:51:07.568+0000 I REPL     [rsSync] ******
-2016-11-20T14:51:07.568+0000 I REPL     [rsSync] initial sync pending
-2016-11-20T14:51:07.645+0000 I REPL     [ReplicationExecutor] syncing from: mongodb_secondary_1:27017
-2016-11-20T14:51:07.658+0000 I REPL     [rsSync] initial sync drop all databases
-2016-11-20T14:51:07.658+0000 I STORAGE  [rsSync] dropAllDatabasesExceptLocal 1
-2016-11-20T14:51:07.658+0000 I REPL     [rsSync] initial sync clone all databases
-2016-11-20T14:51:07.659+0000 I REPL     [rsSync] initial sync data copy, starting syncup
-2016-11-20T14:51:07.659+0000 I REPL     [rsSync] oplog sync 1 of 3
-2016-11-20T14:51:07.660+0000 I REPL     [rsSync] oplog sync 2 of 3
-2016-11-20T14:51:07.660+0000 I REPL     [rsSync] initial sync building indexes
-2016-11-20T14:51:07.660+0000 I REPL     [rsSync] oplog sync 3 of 3
-2016-11-20T14:51:07.662+0000 I REPL     [rsSync] initial sync finishing up
-2016-11-20T14:51:07.662+0000 I REPL     [rsSync] set minValid=(term: -1, timestamp: Nov 20 14:51:04:1)
-2016-11-20T14:51:07.682+0000 I REPL     [rsSync] initial sync done
-2016-11-20T14:51:07.687+0000 I REPL     [ReplicationExecutor] transition to RECOVERING
-2016-11-20T14:51:07.688+0000 I REPL     [ReplicationExecutor] transition to SECONDARY
-2016-11-20T14:51:08.305+0000 I REPL     [ReplicationExecutor] could not find member to sync from
-2016-11-20T14:51:08.306+0000 I REPL     [ReplicationExecutor] Member mongodb_secondary_2:27017 is now in state SECONDARY
-2016-11-20T14:51:17.874+0000 I NETWORK  [conn4] end connection 172.20.0.2:36094 (1 connection now open)
-2016-11-20T14:51:18.298+0000 I NETWORK  [initandlisten] connection accepted from 172.20.0.2:36108 #5 (2 connections now open)
-2016-11-20T14:51:18.309+0000 I REPL     [ReplicationExecutor] Member mongodb_secondary_1:27017 is now in state PRIMARY
-2016-11-20T14:51:18.315+0000 I REPL     [ReplicationExecutor] syncing from: mongodb_secondary_2:27017
-2016-11-20T14:51:18.319+0000 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to mongodb_secondary_2:27017
-2016-11-20T14:51:18.324+0000 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to mongodb_secondary_2:27017
-2016-11-20T14:52:18.351+0000 I REPL     [ReplicationExecutor] could not find member to sync from
-2016-11-20T14:52:18.351+0000 I REPL     [ReplicationExecutor] Error in heartbeat request to mongodb_secondary_1:27017; HostUnreachable: End of file
-2016-11-20T14:52:19.521+0000 I REPL     [ReplicationExecutor] Error in heartbeat request to mongodb_secondary_1:27017; HostUnreachable: Connection reset by peer
-2016-11-20T14:52:19.526+0000 I REPL     [ReplicationExecutor] Error in heartbeat request to mongodb_secondary_1:27017; HostUnreachable: Connection refused
-2016-11-20T14:52:19.782+0000 I NETWORK  [conn2] end connection 172.20.0.4:34366 (1 connection now open)
-2016-11-20T14:52:20.223+0000 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
-2016-11-20T14:52:20.223+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
-2016-11-20T14:52:20.225+0000 I REPL     [signalProcessingThread] Stopping replication applier threads
-2016-11-20T14:52:21.376+0000 I CONTROL  [signalProcessingThread] now exiting
-2016-11-20T14:52:21.376+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
-2016-11-20T14:52:21.376+0000 I NETWORK  [signalProcessingThread] closing listening socket: 6
-2016-11-20T14:52:21.376+0000 I NETWORK  [signalProcessingThread] closing listening socket: 7
-2016-11-20T14:52:21.376+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
-2016-11-20T14:52:21.376+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
-2016-11-20T14:52:21.376+0000 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
-2016-11-20T14:52:21.376+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
-2016-11-20T14:52:21.376+0000 I NETWORK  [conn5] end connection 172.20.0.2:36108 (0 connections now open)
-2016-11-20T14:52:21.543+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
-2016-11-20T14:52:21.543+0000 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=mongodb
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] modules: none
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] build environment:
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten]     distmod: debian71
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-20T15:24:55.891+0000 I CONTROL  [initandlisten] options: { replication: { replSet: "my-mongo-set" }, systemLog: { destination: "file", path: "/home/anael/log/logRset.log" } }
+2016-11-20T15:24:55.895+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-20T15:24:56.075+0000 E STORAGE  [initandlisten] WiredTiger (28) [1479655496:75033][1:0x7fde355d9c80], WT_SESSION.create: sizeStorer.wt: handle-write: pwrite: failed to write 4096 bytes at offset 0: No space left on device
+2016-11-20T15:24:56.097+0000 I -        [initandlisten] Invariant failure: session->create(session, storageUri.c_str(), config.c_str()) resulted in status UnknownError: 28: No space left on device at src/mongo/db/storage/wiredtiger/wiredtiger_size_storer.cpp 64
+2016-11-20T15:24:56.103+0000 I CONTROL  [initandlisten] 
+ 0x1307282 0x12a2078 0x128df5d 0x1071168 0x105c8d7 0x10588a3 0xf7c928 0x949f2d 0x94db3d 0x7fde33f3dead 0x946649
+----- BEGIN BACKTRACE -----
+{"backtrace":[{"b":"400000","o":"F07282","s":"_ZN5mongo15printStackTraceERSo"},{"b":"400000","o":"EA2078","s":"_ZN5mongo10logContextEPKc"},{"b":"400000","o":"E8DF5D","s":"_ZN5mongo17invariantOKFailedEPKcRKNS_6StatusES1_j"},{"b":"400000","o":"C71168","s":"_ZN5mongo20WiredTigerSizeStorerC1EP15__wt_connectionRKSs"},{"b":"400000","o":"C5C8D7","s":"_ZN5mongo18WiredTigerKVEngineC2ERKSsS2_S2_mbbb"},{"b":"400000","o":"C588A3"},{"b":"400000","o":"B7C928","s":"_ZN5mongo20ServiceContextMongoD29initializeGlobalStorageEngineEv"},{"b":"400000","o":"549F2D","s":"_ZN5mongo13initAndListenEi"},{"b":"400000","o":"54DB3D","s":"main"},{"b":"7FDE33F1F000","o":"1EEAD","s":"__libc_start_main"},{"b":"400000","o":"546649"}],"processInfo":{ "mongodbVersion" : "3.2.8", "gitVersion" : "ed70e33130c977bda0024c125b56d159573dbaf0", "compiledModules" : [], "uname" : { "sysname" : "Linux", "release" : "4.4.27-moby", "version" : "#1 SMP Wed Oct 26 14:21:29 UTC 2016", "machine" : "x86_64" }, "somap" : [ { "elfType" : 2, "b" : "400000", "buildId" : "D6EAB75C3D236FDE2266260525362A73AC8CE1E5" }, { "b" : "7FFF073F4000", "elfType" : 3, "buildId" : "E6835FB8E537C5F5E61CC1B051F3E4FE80AD48EE" }, { "b" : "7FDE35165000", "path" : "/usr/lib/x86_64-linux-gnu/libssl.so.1.0.0", "elfType" : 3, "buildId" : "16DA62C831D8080E3BCB9A1E7738D399EA3A89C0" }, { "b" : "7FDE34D6C000", "path" : "/usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0", "elfType" : 3, "buildId" : "079D784F9F4A88B6D87FC3E6B0B07BFBE209540E" }, { "b" : "7FDE34B64000", "path" : "/lib/x86_64-linux-gnu/librt.so.1", "elfType" : 3, "buildId" : "07CC333722DC4237B5F88E47A38C214FDA0B9B59" }, { "b" : "7FDE34960000", "path" : "/lib/x86_64-linux-gnu/libdl.so.2", "elfType" : 3, "buildId" : "028546D6F23D0FD259928FED6EFE53E64782EF2D" }, { "b" : "7FDE346DE000", "path" : "/lib/x86_64-linux-gnu/libm.so.6", "elfType" : 3, "buildId" : "2C5446FA41E784A1C6FDD528AB2BCC7BCA9EF06C" }, { "b" : "7FDE344C8000", "path" : "/lib/x86_64-linux-gnu/libgcc_s.so.1", "elfType" : 3, "buildId" : "F980B1188708F8D8B5C35D185444AF4CB939AA1E" }, { "b" : "7FDE342AC000", "path" : "/lib/x86_64-linux-gnu/libpthread.so.0", "elfType" : 3, "buildId" : "3F3BFFEDAF77C955862785C6CBA7670F82A05563" }, { "b" : "7FDE33F1F000", "path" : "/lib/x86_64-linux-gnu/libc.so.6", "elfType" : 3, "buildId" : "50B9FD83D874F18E3B385E0349FBD5D1281A19E3" }, { "b" : "7FDE353C4000", "path" : "/lib64/ld-linux-x86-64.so.2", "elfType" : 3, "buildId" : "37BC6FC6FF3FA04B0A3EC20DFF215AB55EA5F5CB" }, { "b" : "7FDE33D08000", "path" : "/lib/x86_64-linux-gnu/libz.so.1", "elfType" : 3, "buildId" : "1EFEB71FD4999C2307570D673A724EA4E1D85267" } ] }}
+ mongod(_ZN5mongo15printStackTraceERSo+0x32) [0x1307282]
+ mongod(_ZN5mongo10logContextEPKc+0x138) [0x12a2078]
+ mongod(_ZN5mongo17invariantOKFailedEPKcRKNS_6StatusES1_j+0xAD) [0x128df5d]
+ mongod(_ZN5mongo20WiredTigerSizeStorerC1EP15__wt_connectionRKSs+0x1B8) [0x1071168]
+ mongod(_ZN5mongo18WiredTigerKVEngineC2ERKSsS2_S2_mbbb+0x907) [0x105c8d7]
+ mongod(+0xC588A3) [0x10588a3]
+ mongod(_ZN5mongo20ServiceContextMongoD29initializeGlobalStorageEngineEv+0x598) [0xf7c928]
+ mongod(_ZN5mongo13initAndListenEi+0x3DD) [0x949f2d]
+ mongod(main+0x15D) [0x94db3d]
+ libc.so.6(__libc_start_main+0xFD) [0x7fde33f3dead]
+ mongod(+0x546649) [0x946649]
+-----  END BACKTRACE  -----
+2016-11-20T15:24:56.103+0000 I -        [initandlisten] 
+
+***aborting after invariant() failure
+
+

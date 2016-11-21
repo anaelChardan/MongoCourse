@@ -1,0 +1,50 @@
+2016-11-20T15:21:00.529+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=mongodb
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e 11 Feb 2013
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] modules: none
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] build environment:
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten]     distmod: debian71
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-20T15:21:00.530+0000 I CONTROL  [initandlisten] options: { replication: { replSet: "my-mongo-set" }, systemLog: { destination: "file", path: "/home/anael/log/logRset.log" } }
+2016-11-20T15:21:00.533+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2016-11-20T15:21:00.533+0000 W -        [initandlisten] Detected unclean shutdown - /data/db/mongod.lock is not empty.
+2016-11-20T15:21:00.533+0000 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2016-11-20T15:21:00.533+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-20T15:21:01.148+0000 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument: Did not find replica set lastVote document in local.replset.election
+2016-11-20T15:21:01.148+0000 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument: Did not find replica set configuration document in local.system.replset
+2016-11-20T15:21:01.148+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2016-11-20T15:21:01.148+0000 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-11-20T15:21:01.148+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-11-20T15:21:02.000+0000 W FTDC     [ftdc] Uncaught exception in 'FileStreamFailed: Failed to write to archive file buffer for full-time diagnostic data capture: /data/db/diagnostic.data/metrics.2016-11-20T15-21-01Z-00000' in full-time diagnostic data capture subsystem. Shutting down the full-time diagnostic data capture subsystem.
+2016-11-20T15:22:01.114+0000 E STORAGE  [thread1] WiredTiger (28) [1479655321:114772][1:0x7f59d1e62700], file:index-3-6613519480701854470.wt, WT_SESSION.checkpoint: index-3-6613519480701854470.wt: handle-write: pwrite: failed to write 4096 bytes at offset 16384: No space left on device
+2016-11-20T15:22:01.114+0000 E STORAGE  [thread1] WiredTiger (28) [1479655321:114882][1:0x7f59d1e62700], checkpoint-server: checkpoint server error: No space left on device
+2016-11-20T15:22:01.114+0000 E STORAGE  [thread1] WiredTiger (-31804) [1479655321:114911][1:0x7f59d1e62700], checkpoint-server: the process must exit and restart: WT_PANIC: WiredTiger library panic
+2016-11-20T15:22:01.114+0000 I -        [thread1] Fatal Assertion 28558
+2016-11-20T15:22:01.114+0000 I -        [thread1] 
+
+***aborting after fassert() failure
+
+
+2016-11-20T15:22:01.123+0000 F -        [thread1] Got signal: 6 (Aborted).
+
+ 0x1307282 0x13061a9 0x13069b2 0x7f59d541c0a0 0x7f59d50b2125 0x7f59d50b53a0 0x128d272 0x1075193 0x1a7c85c 0x1a7cd1d 0x1a7d104 0x1a017db 0x7f59d5413b50 0x7f59d515dfbd
+----- BEGIN BACKTRACE -----
+{"backtrace":[{"b":"400000","o":"F07282","s":"_ZN5mongo15printStackTraceERSo"},{"b":"400000","o":"F061A9"},{"b":"400000","o":"F069B2"},{"b":"7F59D540D000","o":"F0A0"},{"b":"7F59D5080000","o":"32125","s":"gsignal"},{"b":"7F59D5080000","o":"353A0","s":"abort"},{"b":"400000","o":"E8D272","s":"_ZN5mongo13fassertFailedEi"},{"b":"400000","o":"C75193"},{"b":"400000","o":"167C85C","s":"__wt_eventv"},{"b":"400000","o":"167CD1D","s":"__wt_err"},{"b":"400000","o":"167D104","s":"__wt_panic"},{"b":"400000","o":"16017DB"},{"b":"7F59D540D000","o":"6B50"},{"b":"7F59D5080000","o":"DDFBD","s":"clone"}],"processInfo":{ "mongodbVersion" : "3.2.8", "gitVersion" : "ed70e33130c977bda0024c125b56d159573dbaf0", "compiledModules" : [], "uname" : { "sysname" : "Linux", "release" : "4.4.27-moby", "version" : "#1 SMP Wed Oct 26 14:21:29 UTC 2016", "machine" : "x86_64" }, "somap" : [ { "elfType" : 2, "b" : "400000", "buildId" : "D6EAB75C3D236FDE2266260525362A73AC8CE1E5" }, { "b" : "7FFF8C0A6000", "elfType" : 3, "buildId" : "E6835FB8E537C5F5E61CC1B051F3E4FE80AD48EE" }, { "b" : "7F59D62C6000", "path" : "/usr/lib/x86_64-linux-gnu/libssl.so.1.0.0", "elfType" : 3, "buildId" : "16DA62C831D8080E3BCB9A1E7738D399EA3A89C0" }, { "b" : "7F59D5ECD000", "path" : "/usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0", "elfType" : 3, "buildId" : "079D784F9F4A88B6D87FC3E6B0B07BFBE209540E" }, { "b" : "7F59D5CC5000", "path" : "/lib/x86_64-linux-gnu/librt.so.1", "elfType" : 3, "buildId" : "07CC333722DC4237B5F88E47A38C214FDA0B9B59" }, { "b" : "7F59D5AC1000", "path" : "/lib/x86_64-linux-gnu/libdl.so.2", "elfType" : 3, "buildId" : "028546D6F23D0FD259928FED6EFE53E64782EF2D" }, { "b" : "7F59D583F000", "path" : "/lib/x86_64-linux-gnu/libm.so.6", "elfType" : 3, "buildId" : "2C5446FA41E784A1C6FDD528AB2BCC7BCA9EF06C" }, { "b" : "7F59D5629000", "path" : "/lib/x86_64-linux-gnu/libgcc_s.so.1", "elfType" : 3, "buildId" : "F980B1188708F8D8B5C35D185444AF4CB939AA1E" }, { "b" : "7F59D540D000", "path" : "/lib/x86_64-linux-gnu/libpthread.so.0", "elfType" : 3, "buildId" : "3F3BFFEDAF77C955862785C6CBA7670F82A05563" }, { "b" : "7F59D5080000", "path" : "/lib/x86_64-linux-gnu/libc.so.6", "elfType" : 3, "buildId" : "50B9FD83D874F18E3B385E0349FBD5D1281A19E3" }, { "b" : "7F59D6525000", "path" : "/lib64/ld-linux-x86-64.so.2", "elfType" : 3, "buildId" : "37BC6FC6FF3FA04B0A3EC20DFF215AB55EA5F5CB" }, { "b" : "7F59D4E69000", "path" : "/lib/x86_64-linux-gnu/libz.so.1", "elfType" : 3, "buildId" : "1EFEB71FD4999C2307570D673A724EA4E1D85267" } ] }}
+ mongod(_ZN5mongo15printStackTraceERSo+0x32) [0x1307282]
+ mongod(+0xF061A9) [0x13061a9]
+ mongod(+0xF069B2) [0x13069b2]
+ libpthread.so.0(+0xF0A0) [0x7f59d541c0a0]
+ libc.so.6(gsignal+0x35) [0x7f59d50b2125]
+ libc.so.6(abort+0x180) [0x7f59d50b53a0]
+ mongod(_ZN5mongo13fassertFailedEi+0x82) [0x128d272]
+ mongod(+0xC75193) [0x1075193]
+ mongod(__wt_eventv+0x42C) [0x1a7c85c]
+ mongod(__wt_err+0x8D) [0x1a7cd1d]
+ mongod(__wt_panic+0x24) [0x1a7d104]
+ mongod(+0x16017DB) [0x1a017db]
+ libpthread.so.0(+0x6B50) [0x7f59d5413b50]
+ libc.so.6(clone+0x6D) [0x7f59d515dfbd]
+-----  END BACKTRACE  -----
