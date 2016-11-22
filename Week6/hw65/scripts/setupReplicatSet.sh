@@ -13,6 +13,6 @@ sleep 1;
 echo "0";
 sleep 1;
 
-mongo --host mongodb_secondary_1 < /scripts/init_replica.js
+mongo --host mongodb_secondary_1 --port 27018 < /scripts/init_replica.js
 
 mongod

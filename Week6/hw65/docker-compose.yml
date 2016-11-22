@@ -1,0 +1,45 @@
+version: '2'
+
+services:
+  mongodb_primary:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/Week6/hw65/data/rs1:/data/rs1
+      ports:
+        - "27017:27017"
+      depends_on:
+        - "mongodb_secondary_2"
+      command: --replSet m101 --smallfiles --oplogSize 64
+
+  mongodb_secondary_1:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs2:/home/anael/log
+      ports:
+        - "27018:27018"
+      depends_on:
+        - "mongodb_primary"
+      command: --replSet m101 --smallfiles --oplogSize 64 --port 27018
+
+  mongodb_secondary_2:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs3:/home/anael/log
+      ports:
+        - "27019:27019"
+      command: --replSet m101 --smallfiles --oplogSize 64 --port 27019
+
+  mongosetuper:
+      hostname: mongodb
+      image: mongo:3.2.8
+      ports:
+        - "27020:27017"
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/Week6/hw65/scripts:/scripts
+      depends_on:
+        - "mongodb_secondary_1"
+      entrypoint: [ "/scripts/setupReplicatSet.sh" ]
+      tty: true
