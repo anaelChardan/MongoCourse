@@ -2,7 +2,6 @@ version: '2'
 
 services:
   mongodb_primary:
-      hostname: mongodb
       image: mongo:3.2.8
       volumes:
         - /mnt/Documents/Workspace/Perso/MongoCourse/Week6/hw65/data/rs1:/data/rs1
@@ -13,7 +12,6 @@ services:
       command: --replSet m101 --smallfiles --oplogSize 64
 
   mongodb_secondary_1:
-      hostname: mongodb
       image: mongo:3.2.8
       volumes:
         - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs2:/home/anael/log
@@ -24,7 +22,6 @@ services:
       command: --replSet m101 --smallfiles --oplogSize 64 --port 27018
 
   mongodb_secondary_2:
-      hostname: mongodb
       image: mongo:3.2.8
       volumes:
         - /mnt/Documents/Workspace/Perso/MongoCourse/log/rs3:/home/anael/log
@@ -33,7 +30,6 @@ services:
       command: --replSet m101 --smallfiles --oplogSize 64 --port 27019
 
   mongosetuper:
-      hostname: mongodb
       image: mongo:3.2.8
       ports:
         - "27020:27017"

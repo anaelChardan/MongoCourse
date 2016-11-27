@@ -4,3 +4,4 @@ storage/
 
 !.gitkeep
 log
+messages.bson

@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  mongodb_primary:
+      hostname: mongodb
+      image: mongo:3.2.8
+      volumes:
+        - /mnt/Documents/Workspace/Perso/MongoCourse/FinalExam:/home/anael/files
+      ports:
+        - "27017:27017"
+      command: --smallfiles
